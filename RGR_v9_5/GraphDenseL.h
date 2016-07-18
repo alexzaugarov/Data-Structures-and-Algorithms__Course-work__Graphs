@@ -1,4 +1,4 @@
-#pragma once
+п»ї#pragma once
 #include "GraphDense.h"
 #include <vector>
 #include <list>
@@ -30,7 +30,7 @@ public:
 	void DeleteE(DEdge *e);
 	DEdge *GetEdge(DVertex *v1, DVertex *v2);
 	void print(int*, int*, int);
-	//итератор ребер
+	//РёС‚РµСЂР°С‚РѕСЂ СЂРµР±РµСЂ
 	class edge_iterator_denseL: public GraphDense<DVertex,DEdge>::edge_iterator_dense{
 		MyMap<DVertex*,list<DEdge*>*> *m;
 		typename map<DVertex*,list<DEdge*>*>::iterator map_iterator;
@@ -48,7 +48,7 @@ public:
 	};
 	edge_iterator_dense *beginE(GraphDense *g);
 	edge_iterator_dense *endE(GraphDense *g);
-	//итератор исходящих ребер
+	//РёС‚РµСЂР°С‚РѕСЂ РёСЃС…РѕРґСЏС‰РёС… СЂРµР±РµСЂ
 	class out_edge_iterator_denseL: public GraphDense<DVertex,DEdge>::edge_iterator_dense{
 		typename list<DEdge*>::iterator list_iterator;
 		DVertex *v;
@@ -155,7 +155,7 @@ bool GraphDenseL<DVertex,DEdge>::DeleteV(DVertex *v){
 
 template<class DVertex, class DEdge>
 DEdge *GraphDenseL<DVertex,DEdge>::InsertE(DVertex *v1, DVertex *v2){
-	//проверка на наличие такого ребра
+	//РїСЂРѕРІРµСЂРєР° РЅР° РЅР°Р»РёС‡РёРµ С‚Р°РєРѕРіРѕ СЂРµР±СЂР°
 	if(this->GetEdge(v1, v2) == NULL){
 		DEdge *e = new DEdge(v1, v2);
 		if(this->InsertE(e))
@@ -270,7 +270,7 @@ typename GraphDense<DVertex,DEdge>::edge_iterator_dense *GraphDenseL<DVertex,DEd
 
 
 
-//итератора ребер
+//РёС‚РµСЂР°С‚РѕСЂР° СЂРµР±РµСЂ
 template<class DVertex, class DEdge>
 GraphDenseL<DVertex,DEdge>::edge_iterator_denseL::edge_iterator_denseL(GraphDense *g, MyMap<DVertex*,list<DEdge*>*> m){
 	this->m = new MyMap<DVertex*,list<DEdge*>*>(m);
@@ -373,7 +373,7 @@ void GraphDenseL<DVertex,DEdge>::edge_iterator_denseL::next(){
 	}
 }
 
-//итератор исходящих ребер
+//РёС‚РµСЂР°С‚РѕСЂ РёСЃС…РѕРґСЏС‰РёС… СЂРµР±РµСЂ
 template<class DVertex, class DEdge>
 GraphDenseL<DVertex,DEdge>::out_edge_iterator_denseL::out_edge_iterator_denseL(DVertex *v, list<DEdge*> *l, GraphDense *g, typename list<DEdge*>::iterator iter){
 	this->v = v;

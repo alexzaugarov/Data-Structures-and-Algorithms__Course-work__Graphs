@@ -1,4 +1,4 @@
-#pragma once
+﻿#pragma once
 class NoSuchElementException{};
 class VertexNotExistException{};
 class NullPointerException{};

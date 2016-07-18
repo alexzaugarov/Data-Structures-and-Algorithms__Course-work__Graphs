@@ -1,4 +1,4 @@
-#pragma once
+п»ї#pragma once
 #include "Edge.h"
 #include "Vertex.h"
 #include "MyMap.h"
@@ -7,8 +7,8 @@ using namespace std;
 template<class DVertex, class DEdge>
 class GraphDense{
 protected:
-	bool directed;						//тип графа - ориентированный или неориентированный
-	int Ecnt; //число ребер в графе
+	bool directed;						//С‚РёРї РіСЂР°С„Р° - РѕСЂРёРµРЅС‚РёСЂРѕРІР°РЅРЅС‹Р№ РёР»Рё РЅРµРѕСЂРёРµРЅС‚РёСЂРѕРІР°РЅРЅС‹Р№
+	int Ecnt; //С‡РёСЃР»Рѕ СЂРµР±РµСЂ РІ РіСЂР°С„Рµ
 public:
 	GraphDense(){Ecnt = 0;}
 	int E(){return Ecnt;}

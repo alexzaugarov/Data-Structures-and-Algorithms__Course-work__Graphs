@@ -1,4 +1,4 @@
-//#include "Graph.h"
+ï»¿//#include "Graph.h"
 //#include <windows.h>
 //#include "MyMap.h"
 //#include "Task1.h"
@@ -38,7 +38,7 @@
 ////	cout<<g.DeleteE(v2,v1)<<endl;
 ////	g.printVertexes();
 ////	cout<<g.GetEdge(v2,v3)<<' '<<e3<<endl;
-////	cout<<"Óäàëåíèå ðåáðà\n"<<g.DeleteE(v3,v2)<<endl;
+////	cout<<"Ð£Ð´Ð°Ð»ÐµÐ½Ð¸Ðµ Ñ€ÐµÐ±Ñ€Ð°\n"<<g.DeleteE(v3,v2)<<endl;
 ////	cout<<g.GetEdge(v2,v3)<<' '<<e3<<endl;
 ////	graph g(5,100,false,true);
 ////	g.ToMatrixGraph();
@@ -151,7 +151,7 @@
 ////	}
 ////
 ////
-///*òåñòðîâàíèå âòîðîé çàäà÷è*/
+///*Ñ‚ÐµÑÑ‚Ñ€Ð¾Ð²Ð°Ð½Ð¸Ðµ Ð²Ñ‚Ð¾Ñ€Ð¾Ð¹ Ð·Ð°Ð´Ð°Ñ‡Ð¸*/
 //	edge *e = NULL;
 //	//e = g.InsertE(m[8],m[0]); e->SetW(1);
 //	//e = g.InsertE(m[8],m[1]); e->SetW(1);

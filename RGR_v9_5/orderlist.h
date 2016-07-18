@@ -1,4 +1,4 @@
-template<class DVertex>
+﻿template<class DVertex>
 class node;
 
 template<class DVertex>

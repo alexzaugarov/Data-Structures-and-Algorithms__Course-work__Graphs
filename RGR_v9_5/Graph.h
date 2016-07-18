@@ -1,4 +1,4 @@
-#pragma once
+п»ї#pragma once
 #include <cstdlib>
 #include <vector>
 #include <list>
@@ -12,10 +12,10 @@ using namespace std;
 
 template<class DVertex, class DEdge>
 class Graph{
-	list<DVertex *> vertexes;	//список вершин
-	GraphDense<DVertex, DEdge> *dense;	//структура графа
-	bool directed;				//тип графа - ориентированный или неориентированный
-	bool dense_type;			//тип структуры графа - L-граф или M-граф
+	list<DVertex *> vertexes;	//СЃРїРёСЃРѕРє РІРµСЂС€РёРЅ
+	GraphDense<DVertex, DEdge> *dense;	//СЃС‚СЂСѓРєС‚СѓСЂР° РіСЂР°С„Р°
+	bool directed;				//С‚РёРї РіСЂР°С„Р° - РѕСЂРёРµРЅС‚РёСЂРѕРІР°РЅРЅС‹Р№ РёР»Рё РЅРµРѕСЂРёРµРЅС‚РёСЂРѕРІР°РЅРЅС‹Р№
+	bool dense_type;			//С‚РёРї СЃС‚СЂСѓРєС‚СѓСЂС‹ РіСЂР°С„Р° - L-РіСЂР°С„ РёР»Рё M-РіСЂР°С„
 	void InsertRandE(int Vcnt, int Ecnt);
 	void init(int Vcnt, bool directed, bool dense_type);
 public:
@@ -39,7 +39,7 @@ public:
 	void print();
 	void printVertexes();
 
-	//итератор вершин
+	//РёС‚РµСЂР°С‚РѕСЂ РІРµСЂС€РёРЅ
 	class vertex_iterator{
 		Graph<DVertex,DEdge> *g;
 		typename list<DVertex*>::iterator i;
@@ -56,7 +56,7 @@ public:
 	vertex_iterator beginV();
 	vertex_iterator endV();
 	friend typename Graph<DVertex, DEdge>::vertex_iterator;
-	//итератор ребер
+	//РёС‚РµСЂР°С‚РѕСЂ СЂРµР±РµСЂ
 	class edge_iterator{
 		bool dense_type;
 		typename GraphDense<DVertex,DEdge>::edge_iterator_dense *i;
@@ -72,7 +72,7 @@ public:
 	friend typename GraphDense<DVertex,DEdge>::edge_iterator_dense;
 	edge_iterator beginE();
 	edge_iterator endE();
-	//итератор исходящих ребер
+	//РёС‚РµСЂР°С‚РѕСЂ РёСЃС…РѕРґСЏС‰РёС… СЂРµР±РµСЂ
 	class out_edge_iterator{
 		bool dense_type;
 		typename GraphDense<DVertex,DEdge>::edge_iterator_dense *i;
@@ -239,11 +239,11 @@ template<class DVertex, class DEdge>
 void Graph<DVertex,DEdge>::ToListGraph(){
 	if(dense_type == true) return; 
 	GraphDense<DVertex,DEdge> *new_dense = new GraphDenseL<DVertex,DEdge>(vertexes.size(), directed);
-	//вставка вершин
+	//РІСЃС‚Р°РІРєР° РІРµСЂС€РёРЅ
 	list<DVertex*>::iterator v = vertexes.begin();
 	for(; v != vertexes.end(); ++v)
 		new_dense->InsertV(*v);
-	//вставка ребер
+	//РІСЃС‚Р°РІРєР° СЂРµР±РµСЂ
 	edge_iterator beg(this->dense, true);
 	edge_iterator end(this->dense, false);
 	for(; beg != end; ++beg){
@@ -258,13 +258,13 @@ template<class DVertex, class DEdge>
 void Graph<DVertex,DEdge>::ToMatrixGraph(){
 	if(dense_type == false) return;
 	GraphDense<DVertex,DEdge> *new_dense = new GraphDenseM<DVertex,DEdge>(vertexes.size(), directed);
-	//индексация вершин и вставка вершин
+	//РёРЅРґРµРєСЃР°С†РёСЏ РІРµСЂС€РёРЅ Рё РІСЃС‚Р°РІРєР° РІРµСЂС€РёРЅ
 	list<DVertex*>::iterator v = vertexes.begin();
 	for(int i = 0; v != vertexes.end(); ++v, i++){
 		(*v)->setIndex(i);
 		new_dense->InsertV(*v);
 	}
-	//вставка ребер
+	//РІСЃС‚Р°РІРєР° СЂРµР±РµСЂ
 	edge_iterator beg(this->dense, true);
 	edge_iterator end(this->dense, false);
 	for(; beg != end; ++beg){
@@ -373,7 +373,7 @@ typename Graph<DVertex,DEdge>::out_edge_iterator Graph<DVertex,DEdge>::endEout(D
 
 
 //***************************************************************************
-//***************************итератор вершин*********************************
+//***************************РёС‚РµСЂР°С‚РѕСЂ РІРµСЂС€РёРЅ*********************************
 //***************************************************************************
 
 template<class DVertex, class DEdge>
@@ -421,7 +421,7 @@ typename Graph<DVertex,DEdge>::vertex_iterator& Graph<DVertex,DEdge>::vertex_ite
 }
 
 //***************************************************************************
-//***************************итератор ребер**********************************
+//***************************РёС‚РµСЂР°С‚РѕСЂ СЂРµР±РµСЂ**********************************
 //***************************************************************************
 template<class DVertex, class DEdge>
 Graph<DVertex,DEdge>::edge_iterator::edge_iterator(GraphDense<DVertex,DEdge> *g, bool begin){
@@ -463,7 +463,7 @@ void Graph<DVertex,DEdge>::edge_iterator::operator ++(){
 }
 
 //***************************************************************************
-//**********************итератор исходящих вершин****************************
+//**********************РёС‚РµСЂР°С‚РѕСЂ РёСЃС…РѕРґСЏС‰РёС… РІРµСЂС€РёРЅ****************************
 //***************************************************************************
 template<class DVertex, class DEdge>
 Graph<DVertex,DEdge>::out_edge_iterator::out_edge_iterator(DVertex *v, GraphDense<DVertex,DEdge> *g, bool begin){

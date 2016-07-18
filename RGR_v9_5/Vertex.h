@@ -1,4 +1,4 @@
-
+﻿
 template<class N, class T>
 class Vertex{
 	N name;
