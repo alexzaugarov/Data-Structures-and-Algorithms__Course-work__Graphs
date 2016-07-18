@@ -1,4 +1,4 @@
-#include "Graph.h"
+ï»¿#include "Graph.h"
 #include <windows.h>
 #include "MyMap.h"
 #include "Task1.h"
@@ -20,29 +20,29 @@ typedef task1::reduce_vertex r_vertex;
 MyMap<name,vertex*> table;
 void printmenu(){
 	system("cls");
-	cout<<"1) Ñîçäàòü ãðàô\n2) Âñòàâèòü âåðøèíó\n3) Âñòàâèòü ðåáðî\n4) Óäàëèòü âåðøèíó\n5) Óäàëèòü ðåáðî\n6) Ïîëó÷èòü ðåáðî\n";
-	cout<<"7) ×èñëî âåðøèí\n8) ×èñëî ðåáåð\n9) Òèï ãðàôà\n10) Ôîðìà ïðåäñòâëåíèÿ ãðàôà\n11) Êîýôôèöèåíò íàñûùåííîñòè\n";
-	cout<<"12) Ïðåîáðàçîâàòü ê L-ãðàôó\n13) Ïðåîáðàçîâàòü ê Ì-Ãðàôó\n14) Èòåðàòîð âåðøèí\n15) Èòåðàòîð ðåáåð\n";
-	cout<<"16) Èòåðàòîð èñõîäÿùèõ ðåáåð\n17) Ðåøèòü çàäà÷ó 1\n18) Ðåøèòü çàäà÷ó 2\n19) Ïîêàçàòü ñòðóêòóðó ãðàôà\n\n";
+	cout<<"1) Ð¡Ð¾Ð·Ð´Ð°Ñ‚ÑŒ Ð³Ñ€Ð°Ñ„\n2) Ð’ÑÑ‚Ð°Ð²Ð¸Ñ‚ÑŒ Ð²ÐµÑ€ÑˆÐ¸Ð½Ñƒ\n3) Ð’ÑÑ‚Ð°Ð²Ð¸Ñ‚ÑŒ Ñ€ÐµÐ±Ñ€Ð¾\n4) Ð£Ð´Ð°Ð»Ð¸Ñ‚ÑŒ Ð²ÐµÑ€ÑˆÐ¸Ð½Ñƒ\n5) Ð£Ð´Ð°Ð»Ð¸Ñ‚ÑŒ Ñ€ÐµÐ±Ñ€Ð¾\n6) ÐŸÐ¾Ð»ÑƒÑ‡Ð¸Ñ‚ÑŒ Ñ€ÐµÐ±Ñ€Ð¾\n";
+	cout<<"7) Ð§Ð¸ÑÐ»Ð¾ Ð²ÐµÑ€ÑˆÐ¸Ð½\n8) Ð§Ð¸ÑÐ»Ð¾ Ñ€ÐµÐ±ÐµÑ€\n9) Ð¢Ð¸Ð¿ Ð³Ñ€Ð°Ñ„Ð°\n10) Ð¤Ð¾Ñ€Ð¼Ð° Ð¿Ñ€ÐµÐ´ÑÑ‚Ð²Ð»ÐµÐ½Ð¸Ñ Ð³Ñ€Ð°Ñ„Ð°\n11) ÐšÐ¾ÑÑ„Ñ„Ð¸Ñ†Ð¸ÐµÐ½Ñ‚ Ð½Ð°ÑÑ‹Ñ‰ÐµÐ½Ð½Ð¾ÑÑ‚Ð¸\n";
+	cout<<"12) ÐŸÑ€ÐµÐ¾Ð±Ñ€Ð°Ð·Ð¾Ð²Ð°Ñ‚ÑŒ Ðº L-Ð³Ñ€Ð°Ñ„Ñƒ\n13) ÐŸÑ€ÐµÐ¾Ð±Ñ€Ð°Ð·Ð¾Ð²Ð°Ñ‚ÑŒ Ðº Ðœ-Ð“Ñ€Ð°Ñ„Ñƒ\n14) Ð˜Ñ‚ÐµÑ€Ð°Ñ‚Ð¾Ñ€ Ð²ÐµÑ€ÑˆÐ¸Ð½\n15) Ð˜Ñ‚ÐµÑ€Ð°Ñ‚Ð¾Ñ€ Ñ€ÐµÐ±ÐµÑ€\n";
+	cout<<"16) Ð˜Ñ‚ÐµÑ€Ð°Ñ‚Ð¾Ñ€ Ð¸ÑÑ…Ð¾Ð´ÑÑ‰Ð¸Ñ… Ñ€ÐµÐ±ÐµÑ€\n17) Ð ÐµÑˆÐ¸Ñ‚ÑŒ Ð·Ð°Ð´Ð°Ñ‡Ñƒ 1\n18) Ð ÐµÑˆÐ¸Ñ‚ÑŒ Ð·Ð°Ð´Ð°Ñ‡Ñƒ 2\n19) ÐŸÐ¾ÐºÐ°Ð·Ð°Ñ‚ÑŒ ÑÑ‚Ñ€ÑƒÐºÑ‚ÑƒÑ€Ñƒ Ð³Ñ€Ð°Ñ„Ð°\n\n";
 }
 
 void printmenuItV(){
 	system("cls");
-	cout<<"1) Îáîéòè âñå âåðøèíû\n2) Óñòàíîâèòü íà íà÷àëî\n3) Ñëåäóþùàÿ âåðøèíà\n4) Ïðî÷èòàòü èìÿ è äàííûå âåðøèíû\n";
-	cout<<"5) Çàïèñàòü èìÿ\n6) Çàïèñàòü äàííûå\n\n";
+	cout<<"1) ÐžÐ±Ð¾Ð¹Ñ‚Ð¸ Ð²ÑÐµ Ð²ÐµÑ€ÑˆÐ¸Ð½Ñ‹\n2) Ð£ÑÑ‚Ð°Ð½Ð¾Ð²Ð¸Ñ‚ÑŒ Ð½Ð° Ð½Ð°Ñ‡Ð°Ð»Ð¾\n3) Ð¡Ð»ÐµÐ´ÑƒÑŽÑ‰Ð°Ñ Ð²ÐµÑ€ÑˆÐ¸Ð½Ð°\n4) ÐŸÑ€Ð¾Ñ‡Ð¸Ñ‚Ð°Ñ‚ÑŒ Ð¸Ð¼Ñ Ð¸ Ð´Ð°Ð½Ð½Ñ‹Ðµ Ð²ÐµÑ€ÑˆÐ¸Ð½Ñ‹\n";
+	cout<<"5) Ð—Ð°Ð¿Ð¸ÑÐ°Ñ‚ÑŒ Ð¸Ð¼Ñ\n6) Ð—Ð°Ð¿Ð¸ÑÐ°Ñ‚ÑŒ Ð´Ð°Ð½Ð½Ñ‹Ðµ\n\n";
 }
 
 void printmenuItE(){
 	system("cls");
-	cout<<"1) Îáîéòè âñå ðåáðà\n2) Óñòàíîâèòü íà íà÷àëî\n3) Ñëåäóþùåå ðåáðî\n4) Ïðî÷èòàòü âåñ è äàííûå ðåáðà\n";
-	cout<<"5) Çàïèñàòü äàííûå\n6) Çàïèñàòü âåñ\n\n";
+	cout<<"1) ÐžÐ±Ð¾Ð¹Ñ‚Ð¸ Ð²ÑÐµ Ñ€ÐµÐ±Ñ€Ð°\n2) Ð£ÑÑ‚Ð°Ð½Ð¾Ð²Ð¸Ñ‚ÑŒ Ð½Ð° Ð½Ð°Ñ‡Ð°Ð»Ð¾\n3) Ð¡Ð»ÐµÐ´ÑƒÑŽÑ‰ÐµÐµ Ñ€ÐµÐ±Ñ€Ð¾\n4) ÐŸÑ€Ð¾Ñ‡Ð¸Ñ‚Ð°Ñ‚ÑŒ Ð²ÐµÑ Ð¸ Ð´Ð°Ð½Ð½Ñ‹Ðµ Ñ€ÐµÐ±Ñ€Ð°\n";
+	cout<<"5) Ð—Ð°Ð¿Ð¸ÑÐ°Ñ‚ÑŒ Ð´Ð°Ð½Ð½Ñ‹Ðµ\n6) Ð—Ð°Ð¿Ð¸ÑÐ°Ñ‚ÑŒ Ð²ÐµÑ\n\n";
 }
 
 void printmenuItEout(){
 	system("cls");
-	cout<<"1) Îáîéòè âñå èñõîäÿùèå ðåáðà óêàçàííîé âåðøèíû\n2) Îáîéòè èñõîäÿùèå ðåáðà âñåõ âåðøèí\n3) Óñòàíîâèòü íà íà÷àëî\n";
-	cout<<"4) Ñëåäóþùåå ðåáðî\n5) Ïðî÷èòàòü âåñ è äàííûå ðåáðà\n";
-	cout<<"6) Çàïèñàòü äàííûå\n7) Çàïèñàòü âåñ\n\n";
+	cout<<"1) ÐžÐ±Ð¾Ð¹Ñ‚Ð¸ Ð²ÑÐµ Ð¸ÑÑ…Ð¾Ð´ÑÑ‰Ð¸Ðµ Ñ€ÐµÐ±Ñ€Ð° ÑƒÐºÐ°Ð·Ð°Ð½Ð½Ð¾Ð¹ Ð²ÐµÑ€ÑˆÐ¸Ð½Ñ‹\n2) ÐžÐ±Ð¾Ð¹Ñ‚Ð¸ Ð¸ÑÑ…Ð¾Ð´ÑÑ‰Ð¸Ðµ Ñ€ÐµÐ±Ñ€Ð° Ð²ÑÐµÑ… Ð²ÐµÑ€ÑˆÐ¸Ð½\n3) Ð£ÑÑ‚Ð°Ð½Ð¾Ð²Ð¸Ñ‚ÑŒ Ð½Ð° Ð½Ð°Ñ‡Ð°Ð»Ð¾\n";
+	cout<<"4) Ð¡Ð»ÐµÐ´ÑƒÑŽÑ‰ÐµÐµ Ñ€ÐµÐ±Ñ€Ð¾\n5) ÐŸÑ€Ð¾Ñ‡Ð¸Ñ‚Ð°Ñ‚ÑŒ Ð²ÐµÑ Ð¸ Ð´Ð°Ð½Ð½Ñ‹Ðµ Ñ€ÐµÐ±Ñ€Ð°\n";
+	cout<<"6) Ð—Ð°Ð¿Ð¸ÑÐ°Ñ‚ÑŒ Ð´Ð°Ð½Ð½Ñ‹Ðµ\n7) Ð—Ð°Ð¿Ð¸ÑÐ°Ñ‚ÑŒ Ð²ÐµÑ\n\n";
 }
 
 void printPath(list<vertex*> s){
@@ -55,10 +55,10 @@ void printPath(list<vertex*> s){
 graph *createGraph(){
 	int v,e;
 	int dir,dense;
-	cout<<"Êîëè÷åñòâî âåðøèí: "; cin>>v;
-	cout<<"Êîëè÷åñòâî ðåáåð: "; cin>>e;
-	cout<<"Îðèåíòèðîâàííûé - 1, Íåîðèåíòèðîâàííûé - 0\n"; cin>>dir;
-	cout<<"L-ãðàô - 1, M-ãðàô - 0\n"; cin>>dense;
+	cout<<"ÐšÐ¾Ð»Ð¸Ñ‡ÐµÑÑ‚Ð²Ð¾ Ð²ÐµÑ€ÑˆÐ¸Ð½: "; cin>>v;
+	cout<<"ÐšÐ¾Ð»Ð¸Ñ‡ÐµÑÑ‚Ð²Ð¾ Ñ€ÐµÐ±ÐµÑ€: "; cin>>e;
+	cout<<"ÐžÑ€Ð¸ÐµÐ½Ñ‚Ð¸Ñ€Ð¾Ð²Ð°Ð½Ð½Ñ‹Ð¹ - 1, ÐÐµÐ¾Ñ€Ð¸ÐµÐ½Ñ‚Ð¸Ñ€Ð¾Ð²Ð°Ð½Ð½Ñ‹Ð¹ - 0\n"; cin>>dir;
+	cout<<"L-Ð³Ñ€Ð°Ñ„ - 1, M-Ð³Ñ€Ð°Ñ„ - 0\n"; cin>>dense;
 	graph *g = new graph(v,e,dir,dense);
 	table.clear();
 	if(v > 0){
@@ -73,18 +73,18 @@ graph *createGraph(){
 
 void insertV(graph *g){
 	if(!g){
-		cout<<"Ñîçäàéòå ãðàô\n";
+		cout<<"Ð¡Ð¾Ð·Ð´Ð°Ð¹Ñ‚Ðµ Ð³Ñ€Ð°Ñ„\n";
 		return;
 	}
 	name n; 
 	data_v data;
-	cout<<"Ââåäèòå èìÿ âåðøèíû: "; cin>>n;
+	cout<<"Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ð¸Ð¼Ñ Ð²ÐµÑ€ÑˆÐ¸Ð½Ñ‹: "; cin>>n;
 	if(table.contain(n)){
 		int res;
-		cout<<"Âåðøèíà ñ òàêèì èìåíåì ñîäåðæèòñÿ â ãðàôå";
+		cout<<"Ð’ÐµÑ€ÑˆÐ¸Ð½Ð° Ñ Ñ‚Ð°ÐºÐ¸Ð¼ Ð¸Ð¼ÐµÐ½ÐµÐ¼ ÑÐ¾Ð´ÐµÑ€Ð¶Ð¸Ñ‚ÑÑ Ð² Ð³Ñ€Ð°Ñ„Ðµ";
 		if(res == 0) return;
 	}
-	cout<<"Ââåäèòå äàííûå: "; cin>>data;
+	cout<<"Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ð´Ð°Ð½Ð½Ñ‹Ðµ: "; cin>>data;
 	vertex *v = g->InsertV();
 	v->SetName(n);
 	v->SetData(data);
@@ -93,15 +93,15 @@ void insertV(graph *g){
 
 void insertE(graph *g){
 	if(!g){
-		cout<<"Ñîçäàéòå ãðàô\n";
+		cout<<"Ð¡Ð¾Ð·Ð´Ð°Ð¹Ñ‚Ðµ Ð³Ñ€Ð°Ñ„\n";
 		return;
 	}
 	vertex *v1,*v2;
 	name n1,n2;
-	cout<<"Ââåäèòå èìåíà âåðøèí\nÂåðøèíà 1: "; cin>>n1;
-	cout<<"Âåðøèíà 2: "; cin>>n2;
+	cout<<"Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ð¸Ð¼ÐµÐ½Ð° Ð²ÐµÑ€ÑˆÐ¸Ð½\nÐ’ÐµÑ€ÑˆÐ¸Ð½Ð° 1: "; cin>>n1;
+	cout<<"Ð’ÐµÑ€ÑˆÐ¸Ð½Ð° 2: "; cin>>n2;
 	if(n1 == n2){
-		cout<<"Ãðàô íå äîëæåí ñîäåîæàòü ïåòåëü\n";
+		cout<<"Ð“Ñ€Ð°Ñ„ Ð½Ðµ Ð´Ð¾Ð»Ð¶ÐµÐ½ ÑÐ¾Ð´ÐµÐ¾Ð¶Ð°Ñ‚ÑŒ Ð¿ÐµÑ‚ÐµÐ»ÑŒ\n";
 		return;
 	}
 	if(table.contain(n1))
@@ -110,134 +110,134 @@ void insertE(graph *g){
 			v2 = table[n2];
 			data_e data;
 			weight w;
-			cout<<"Ââåäèòå äàííûå ðåáðà: "; cin>>data;
-			cout<<"Ââåäèòå âåñ ðåáðà: "; cin>>w;
+			cout<<"Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ð´Ð°Ð½Ð½Ñ‹Ðµ Ñ€ÐµÐ±Ñ€Ð°: "; cin>>data;
+			cout<<"Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ð²ÐµÑ Ñ€ÐµÐ±Ñ€Ð°: "; cin>>w;
 			edge *e = g->InsertE(v1,v2);
 			if(e){
 				e->SetData(data);
 				e->SetW(w);
 			}else
-				cout<<"Òàêîå ðåáðî óæå åñòü â ãðàôå\n";
+				cout<<"Ð¢Ð°ÐºÐ¾Ðµ Ñ€ÐµÐ±Ñ€Ð¾ ÑƒÐ¶Ðµ ÐµÑÑ‚ÑŒ Ð² Ð³Ñ€Ð°Ñ„Ðµ\n";
 		}else
-			cout<<"Â ãðàôå íåò âåðøèíû "<<n2<<endl;
+			cout<<"Ð’ Ð³Ñ€Ð°Ñ„Ðµ Ð½ÐµÑ‚ Ð²ÐµÑ€ÑˆÐ¸Ð½Ñ‹ "<<n2<<endl;
 	else
-		cout<<"Â ãðàôå íåò âåðøèíû "<<n1<<endl;
+		cout<<"Ð’ Ð³Ñ€Ð°Ñ„Ðµ Ð½ÐµÑ‚ Ð²ÐµÑ€ÑˆÐ¸Ð½Ñ‹ "<<n1<<endl;
 }
 
 void deleteV(graph *g){
 	if(!g){
-		cout<<"Ñîçäàéòå ãðàô\n";
+		cout<<"Ð¡Ð¾Ð·Ð´Ð°Ð¹Ñ‚Ðµ Ð³Ñ€Ð°Ñ„\n";
 		return;
 	}
 	name n;
-	cout<<"Ââåäèòå èìÿ âåðøèíû: "; cin>>n;
+	cout<<"Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ð¸Ð¼Ñ Ð²ÐµÑ€ÑˆÐ¸Ð½Ñ‹: "; cin>>n;
 	if(table.contain(n)){
 		g->DeleteV(table[n]);
 		table.remove(n);
 	}
 	else
-		cout<<"Òàêîé âåðøèíû íåò â ãðàôå\n";
+		cout<<"Ð¢Ð°ÐºÐ¾Ð¹ Ð²ÐµÑ€ÑˆÐ¸Ð½Ñ‹ Ð½ÐµÑ‚ Ð² Ð³Ñ€Ð°Ñ„Ðµ\n";
 }
 
 void deleteE(graph *g){
 	if(!g){
-		cout<<"Ñîçäàéòå ãðàô\n";
+		cout<<"Ð¡Ð¾Ð·Ð´Ð°Ð¹Ñ‚Ðµ Ð³Ñ€Ð°Ñ„\n";
 		return;
 	}
 	vertex *v1,*v2;
 	name n1,n2;
-	cout<<"Ââåäèòå èìåíà âåðøèí\nÂåðøèíà 1: "; cin>>n1;
-	cout<<"Âåðøèíà 2: "; cin>>n2;
+	cout<<"Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ð¸Ð¼ÐµÐ½Ð° Ð²ÐµÑ€ÑˆÐ¸Ð½\nÐ’ÐµÑ€ÑˆÐ¸Ð½Ð° 1: "; cin>>n1;
+	cout<<"Ð’ÐµÑ€ÑˆÐ¸Ð½Ð° 2: "; cin>>n2;
 	if(table.contain(n1))
 		if(table.contain(n2)){
 			v1 = table[n1];
 			v2 = table[n2];
 			if(g->DeleteE(v1, v2))
-				cout<<"Óñïåõ\n";
+				cout<<"Ð£ÑÐ¿ÐµÑ…\n";
 			else
-				cout<<"Ìåæäó äàííûìè âåðøèíàìè íåò ðåáðà\n";
+				cout<<"ÐœÐµÐ¶Ð´Ñƒ Ð´Ð°Ð½Ð½Ñ‹Ð¼Ð¸ Ð²ÐµÑ€ÑˆÐ¸Ð½Ð°Ð¼Ð¸ Ð½ÐµÑ‚ Ñ€ÐµÐ±Ñ€Ð°\n";
 		}else
-			cout<<"Â ãðàôå íåò âåðøèíû "<<n2<<endl;
+			cout<<"Ð’ Ð³Ñ€Ð°Ñ„Ðµ Ð½ÐµÑ‚ Ð²ÐµÑ€ÑˆÐ¸Ð½Ñ‹ "<<n2<<endl;
 	else
-		cout<<"Â ãðàôå íåò âåðøèíû "<<n1<<endl;
+		cout<<"Ð’ Ð³Ñ€Ð°Ñ„Ðµ Ð½ÐµÑ‚ Ð²ÐµÑ€ÑˆÐ¸Ð½Ñ‹ "<<n1<<endl;
 }
 
 void getE(graph *g){
 	if(!g){
-		cout<<"Ñîçäàéòå ãðàô\n";
+		cout<<"Ð¡Ð¾Ð·Ð´Ð°Ð¹Ñ‚Ðµ Ð³Ñ€Ð°Ñ„\n";
 		return;
 	}
 	vertex *v1,*v2;
 	name n1,n2;
-	cout<<"Ââåäèòå èìåíà âåðøèí\nÂåðøèíà 1: "; cin>>n1;
-	cout<<"Âåðøèíà 2: "; cin>>n2;
+	cout<<"Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ð¸Ð¼ÐµÐ½Ð° Ð²ÐµÑ€ÑˆÐ¸Ð½\nÐ’ÐµÑ€ÑˆÐ¸Ð½Ð° 1: "; cin>>n1;
+	cout<<"Ð’ÐµÑ€ÑˆÐ¸Ð½Ð° 2: "; cin>>n2;
 	if(table.contain(n1))
 		if(table.contain(n2)){
 			v1 = table[n1];
 			v2 = table[n2];
 			edge *e = g->GetEdge(v1, v2);
 			if(e){
-				cout<<"Äàííûå: "<<e->GetData()<<endl;
-				cout<<"Âåñ: "<<e->GetW()<<endl;
+				cout<<"Ð”Ð°Ð½Ð½Ñ‹Ðµ: "<<e->GetData()<<endl;
+				cout<<"Ð’ÐµÑ: "<<e->GetW()<<endl;
 			}else
-				cout<<"Ìåæäó äàííûìè âåðøèíàìè íåò ðåáðà\n";
+				cout<<"ÐœÐµÐ¶Ð´Ñƒ Ð´Ð°Ð½Ð½Ñ‹Ð¼Ð¸ Ð²ÐµÑ€ÑˆÐ¸Ð½Ð°Ð¼Ð¸ Ð½ÐµÑ‚ Ñ€ÐµÐ±Ñ€Ð°\n";
 		}else
-			cout<<"Â ãðàôå íåò âåðøèíû "<<n2<<endl;
+			cout<<"Ð’ Ð³Ñ€Ð°Ñ„Ðµ Ð½ÐµÑ‚ Ð²ÐµÑ€ÑˆÐ¸Ð½Ñ‹ "<<n2<<endl;
 	else
-		cout<<"Â ãðàôå íåò âåðøèíû "<<n1<<endl;
+		cout<<"Ð’ Ð³Ñ€Ð°Ñ„Ðµ Ð½ÐµÑ‚ Ð²ÐµÑ€ÑˆÐ¸Ð½Ñ‹ "<<n1<<endl;
 }
 
 void getVcnt(graph *g){
 	if(!g){
-		cout<<"Ñîçäàéòå ãðàô\n";
+		cout<<"Ð¡Ð¾Ð·Ð´Ð°Ð¹Ñ‚Ðµ Ð³Ñ€Ð°Ñ„\n";
 		return;
 	}
-	cout<<"×èñëî âåðøèí: "<<g->V()<<endl;
+	cout<<"Ð§Ð¸ÑÐ»Ð¾ Ð²ÐµÑ€ÑˆÐ¸Ð½: "<<g->V()<<endl;
 }
 
 void getEcnt(graph *g){
 	if(!g){
-		cout<<"Ñîçäàéòå ãðàô\n";
+		cout<<"Ð¡Ð¾Ð·Ð´Ð°Ð¹Ñ‚Ðµ Ð³Ñ€Ð°Ñ„\n";
 		return;
 	}
-	cout<<"×èñëî ðåáåð: "<<g->E()<<endl;
+	cout<<"Ð§Ð¸ÑÐ»Ð¾ Ñ€ÐµÐ±ÐµÑ€: "<<g->E()<<endl;
 }
 
 void directed(graph *g){
 	if(!g){
-		cout<<"Ñîçäàéòå ãðàô\n";
+		cout<<"Ð¡Ð¾Ð·Ð´Ð°Ð¹Ñ‚Ðµ Ð³Ñ€Ð°Ñ„\n";
 		return;
 	}
 	bool d = g->Directed();
 	if(d)
-		cout<<"Ãðàô îðèåíòèðîâàííûé\n";
+		cout<<"Ð“Ñ€Ð°Ñ„ Ð¾Ñ€Ð¸ÐµÐ½Ñ‚Ð¸Ñ€Ð¾Ð²Ð°Ð½Ð½Ñ‹Ð¹\n";
 	else
-		cout<<"Ãðàô íåîðèåòèðîâàííûé\n";
+		cout<<"Ð“Ñ€Ð°Ñ„ Ð½ÐµÐ¾Ñ€Ð¸ÐµÑ‚Ð¸Ñ€Ð¾Ð²Ð°Ð½Ð½Ñ‹Ð¹\n";
 }
 
 void dense(graph *g){
 	if(!g){
-		cout<<"Ñîçäàéòå ãðàô\n";
+		cout<<"Ð¡Ð¾Ð·Ð´Ð°Ð¹Ñ‚Ðµ Ð³Ñ€Ð°Ñ„\n";
 		return;
 	}
 	bool d = g->Dense();
 	if(d)
-		cout<<"L-ãðàô\n";
+		cout<<"L-Ð³Ñ€Ð°Ñ„\n";
 	else
-		cout<<"Ì-ãðàô\n";
+		cout<<"Ðœ-Ð³Ñ€Ð°Ñ„\n";
 }
 
 void K(graph *g){
 	if(!g){
-		cout<<"Ñîçäàéòå ãðàô\n";
+		cout<<"Ð¡Ð¾Ð·Ð´Ð°Ð¹Ñ‚Ðµ Ð³Ñ€Ð°Ñ„\n";
 		return;
 	}
-	cout<<"Êîýôôèöèåíò íàñûùåííîñòè: "<<g->K()<<endl;
+	cout<<"ÐšÐ¾ÑÑ„Ñ„Ð¸Ñ†Ð¸ÐµÐ½Ñ‚ Ð½Ð°ÑÑ‹Ñ‰ÐµÐ½Ð½Ð¾ÑÑ‚Ð¸: "<<g->K()<<endl;
 }
 
 void toLgraph(graph *g){
 	if(!g){
-		cout<<"Ñîçäàéòå ãðàô\n";
+		cout<<"Ð¡Ð¾Ð·Ð´Ð°Ð¹Ñ‚Ðµ Ð³Ñ€Ð°Ñ„\n";
 		return;
 	}
 	g->ToListGraph();
@@ -245,7 +245,7 @@ void toLgraph(graph *g){
 
 void toMgraph(graph *g){
 	if(!g){
-		cout<<"Ñîçäàéòå ãðàô\n";
+		cout<<"Ð¡Ð¾Ð·Ð´Ð°Ð¹Ñ‚Ðµ Ð³Ñ€Ð°Ñ„\n";
 		return;
 	}
 	g->ToMatrixGraph();
@@ -253,7 +253,7 @@ void toMgraph(graph *g){
 
 void iteratorV(graph *g){
 	if(!g){
-		cout<<"Ñîçäàéòå ãðàô\n";
+		cout<<"Ð¡Ð¾Ð·Ð´Ð°Ð¹Ñ‚Ðµ Ð³Ñ€Ð°Ñ„\n";
 		return;
 	}
 	printmenuItV();
@@ -280,7 +280,7 @@ void iteratorV(graph *g){
 				try{
 					++i;
 				}catch(NoSuchElementException){
-					cout<<"Èòåðàòîð íå óñòàíîâëåí\n";
+					cout<<"Ð˜Ñ‚ÐµÑ€Ð°Ñ‚Ð¾Ñ€ Ð½Ðµ ÑƒÑÑ‚Ð°Ð½Ð¾Ð²Ð»ÐµÐ½\n";
 				}
 				break;
 				   }
@@ -290,7 +290,7 @@ void iteratorV(graph *g){
 					cout<<"Name\tData\n";
 					cout<<v->GetName()<<"\t"<<v->GetData()<<endl;
 				}catch(NoSuchElementException){
-					cout<<"Èòåðàòîð íå óñòàíîâëåí\n";
+					cout<<"Ð˜Ñ‚ÐµÑ€Ð°Ñ‚Ð¾Ñ€ Ð½Ðµ ÑƒÑÑ‚Ð°Ð½Ð¾Ð²Ð»ÐµÐ½\n";
 				}
 				break;
 				   }
@@ -299,12 +299,12 @@ void iteratorV(graph *g){
 					vertex *v = *i;
 					name old_name = v->GetName();
 					name n;
-					cout<<"Íîâîå èìÿ: "; cin>>n;
+					cout<<"ÐÐ¾Ð²Ð¾Ðµ Ð¸Ð¼Ñ: "; cin>>n;
 					v->SetName(n);
 					table.remove(old_name);
 					table.put(n,v);
 				}catch(NoSuchElementException){
-					cout<<"Èòåðàòîð íå óñòàíîâëåí\n";
+					cout<<"Ð˜Ñ‚ÐµÑ€Ð°Ñ‚Ð¾Ñ€ Ð½Ðµ ÑƒÑÑ‚Ð°Ð½Ð¾Ð²Ð»ÐµÐ½\n";
 				}
 				break;
 				   }
@@ -312,10 +312,10 @@ void iteratorV(graph *g){
 				try{
 					vertex *v = *i;
 					data_v data;
-					cout<<"Íîâûå äàííûå: "; cin>>data;
+					cout<<"ÐÐ¾Ð²Ñ‹Ðµ Ð´Ð°Ð½Ð½Ñ‹Ðµ: "; cin>>data;
 					v->SetData(data);
 				}catch(NoSuchElementException){
-					cout<<"Èòåðàòîð íå óñòàíîâëåí\n";
+					cout<<"Ð˜Ñ‚ÐµÑ€Ð°Ñ‚Ð¾Ñ€ Ð½Ðµ ÑƒÑÑ‚Ð°Ð½Ð¾Ð²Ð»ÐµÐ½\n";
 				}
 				break;
 				   }
@@ -328,7 +328,7 @@ void iteratorV(graph *g){
 
 void iteratorE(graph *g){
 	if(!g){
-		cout<<"Ñîçäàéòå ãðàô\n";
+		cout<<"Ð¡Ð¾Ð·Ð´Ð°Ð¹Ñ‚Ðµ Ð³Ñ€Ð°Ñ„\n";
 		return;
 	}
 	printmenuItE();
@@ -358,7 +358,7 @@ void iteratorE(graph *g){
 				try{
 					++i;
 				}catch(NoSuchElementException){
-					cout<<"Èòåðàòîð íå óñòàíîâëåí\n";
+					cout<<"Ð˜Ñ‚ÐµÑ€Ð°Ñ‚Ð¾Ñ€ Ð½Ðµ ÑƒÑÑ‚Ð°Ð½Ð¾Ð²Ð»ÐµÐ½\n";
 				}
 				break;
 				   }
@@ -371,7 +371,7 @@ void iteratorE(graph *g){
 					cout<<'('<<n1<<','<<n2<<")\t";
 					cout<<e->GetData()<<"\t"<<e->GetW()<<endl;
 				}catch(NoSuchElementException){
-					cout<<"Èòåðàòîð íå óñòàíîâëåí\n";
+					cout<<"Ð˜Ñ‚ÐµÑ€Ð°Ñ‚Ð¾Ñ€ Ð½Ðµ ÑƒÑÑ‚Ð°Ð½Ð¾Ð²Ð»ÐµÐ½\n";
 				}
 				break;
 				   }
@@ -379,10 +379,10 @@ void iteratorE(graph *g){
 				try{
 					edge *e = *i;
 					data_e data;
-					cout<<"Íîâûå äàííûå: "; cin>>data;
+					cout<<"ÐÐ¾Ð²Ñ‹Ðµ Ð´Ð°Ð½Ð½Ñ‹Ðµ: "; cin>>data;
 					e->SetData(data);
 				}catch(NoSuchElementException){
-					cout<<"Èòåðàòîð íå óñòàíîâëåí\n";
+					cout<<"Ð˜Ñ‚ÐµÑ€Ð°Ñ‚Ð¾Ñ€ Ð½Ðµ ÑƒÑÑ‚Ð°Ð½Ð¾Ð²Ð»ÐµÐ½\n";
 				}
 				break;
 				   }
@@ -390,10 +390,10 @@ void iteratorE(graph *g){
 				try{
 					edge *e = *i;
 					weight w;
-					cout<<"Íîâûé âåñ: "; cin>>w;
+					cout<<"ÐÐ¾Ð²Ñ‹Ð¹ Ð²ÐµÑ: "; cin>>w;
 					e->SetW(w);
 				}catch(NoSuchElementException){
-					cout<<"Èòåðàòîð íå óñòàíîâëåí\n";
+					cout<<"Ð˜Ñ‚ÐµÑ€Ð°Ñ‚Ð¾Ñ€ Ð½Ðµ ÑƒÑÑ‚Ð°Ð½Ð¾Ð²Ð»ÐµÐ½\n";
 				}
 				break;
 				   }
@@ -406,7 +406,7 @@ void iteratorE(graph *g){
 
 void iteratorEout(graph *g){
 	if(!g){
-		cout<<"Ñîçäàéòå ãðàô\n";
+		cout<<"Ð¡Ð¾Ð·Ð´Ð°Ð¹Ñ‚Ðµ Ð³Ñ€Ð°Ñ„\n";
 		return;
 	}
 	printmenuItEout();
@@ -419,9 +419,9 @@ void iteratorEout(graph *g){
 		switch(red){
 			case 1:{
 				name n;
-				cout<<"Ââåäèòå èìÿ âåðøèíû: "; cin>>n;
+				cout<<"Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ð¸Ð¼Ñ Ð²ÐµÑ€ÑˆÐ¸Ð½Ñ‹: "; cin>>n;
 				if(!table.contain(n)) {
-					cout<<"Âåðøèíû ñ òàêèì èìåíåì íå ñóùåñòâóåò\n";
+					cout<<"Ð’ÐµÑ€ÑˆÐ¸Ð½Ñ‹ Ñ Ñ‚Ð°ÐºÐ¸Ð¼ Ð¸Ð¼ÐµÐ½ÐµÐ¼ Ð½Ðµ ÑÑƒÑ‰ÐµÑÑ‚Ð²ÑƒÐµÑ‚\n";
 					break;
 				}
 				graph::out_edge_iterator it = g->beginEout(table[n]);
@@ -454,9 +454,9 @@ void iteratorEout(graph *g){
 				   }
 			case 3:{
 				name n;
-				cout<<"Ââåäèòå èìÿ âåðøèíû: "; cin>>n;
+				cout<<"Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ð¸Ð¼Ñ Ð²ÐµÑ€ÑˆÐ¸Ð½Ñ‹: "; cin>>n;
 				if(!table.contain(n)) {
-					cout<<"Âåðøèíû ñ òàêèì èìåíåì íå ñóùåñòâóåò\n";
+					cout<<"Ð’ÐµÑ€ÑˆÐ¸Ð½Ñ‹ Ñ Ñ‚Ð°ÐºÐ¸Ð¼ Ð¸Ð¼ÐµÐ½ÐµÐ¼ Ð½Ðµ ÑÑƒÑ‰ÐµÑÑ‚Ð²ÑƒÐµÑ‚\n";
 					break;
 				}
 				i = g->beginEout(table[n]);
@@ -466,7 +466,7 @@ void iteratorEout(graph *g){
 				try{
 					++i;
 				}catch(NoSuchElementException){
-					cout<<"Èòåðàòîð íå óñòàíîâëåí\n";
+					cout<<"Ð˜Ñ‚ÐµÑ€Ð°Ñ‚Ð¾Ñ€ Ð½Ðµ ÑƒÑÑ‚Ð°Ð½Ð¾Ð²Ð»ÐµÐ½\n";
 				}
 				break;
 				   }
@@ -479,7 +479,7 @@ void iteratorEout(graph *g){
 					cout<<'('<<n1<<','<<n2<<")\t";
 					cout<<e->GetData()<<"\t"<<e->GetW()<<endl;
 				}catch(NoSuchElementException){
-					cout<<"Èòåðàòîð íå óñòàíîâëåí\n";
+					cout<<"Ð˜Ñ‚ÐµÑ€Ð°Ñ‚Ð¾Ñ€ Ð½Ðµ ÑƒÑÑ‚Ð°Ð½Ð¾Ð²Ð»ÐµÐ½\n";
 				}
 				break;
 				   }
@@ -487,10 +487,10 @@ void iteratorEout(graph *g){
 				try{
 					edge *e = *i;
 					data_e data;
-					cout<<"Íîâûå äàííûå: "; cin>>data;
+					cout<<"ÐÐ¾Ð²Ñ‹Ðµ Ð´Ð°Ð½Ð½Ñ‹Ðµ: "; cin>>data;
 					e->SetData(data);
 				}catch(NoSuchElementException){
-					cout<<"Èòåðàòîð íå óñòàíîâëåí\n";
+					cout<<"Ð˜Ñ‚ÐµÑ€Ð°Ñ‚Ð¾Ñ€ Ð½Ðµ ÑƒÑÑ‚Ð°Ð½Ð¾Ð²Ð»ÐµÐ½\n";
 				}
 				break;
 				   }
@@ -498,10 +498,10 @@ void iteratorEout(graph *g){
 				try{
 					edge *e = *i;
 					weight w;
-					cout<<"Íîâûé âåñ: "; cin>>w;
+					cout<<"ÐÐ¾Ð²Ñ‹Ð¹ Ð²ÐµÑ: "; cin>>w;
 					e->SetW(w);
 				}catch(NoSuchElementException){
-					cout<<"Èòåðàòîð íå óñòàíîâëåí\n";
+					cout<<"Ð˜Ñ‚ÐµÑ€Ð°Ñ‚Ð¾Ñ€ Ð½Ðµ ÑƒÑÑ‚Ð°Ð½Ð¾Ð²Ð»ÐµÐ½\n";
 				}
 				break;
 				   }
@@ -515,18 +515,18 @@ void iteratorEout(graph *g){
 
 void solveTask1(graph *g){
 	if(!g){
-		cout<<"Ñîçäàéòå ãðàô\n";
+		cout<<"Ð¡Ð¾Ð·Ð´Ð°Ð¹Ñ‚Ðµ Ð³Ñ€Ð°Ñ„\n";
 		return;
 	}
-	cout<<"******************Ðåøåíèå çàäà÷è 1********************\n";
+	cout<<"******************Ð ÐµÑˆÐµÐ½Ð¸Ðµ Ð·Ð°Ð´Ð°Ñ‡Ð¸ 1********************\n";
 	try{
 		task1 t(g);
 		Graph<r_vertex,r_edge> *res = t.Result();
 		Graph<r_vertex,r_edge>::vertex_iterator iV = res->beginV();
-		cout<<"Ñòðóêòóðà ðåäóöèðîâàííîãî ãðàôà\n";
+		cout<<"Ð¡Ñ‚Ñ€ÑƒÐºÑ‚ÑƒÑ€Ð° Ñ€ÐµÐ´ÑƒÑ†Ð¸Ñ€Ð¾Ð²Ð°Ð½Ð½Ð¾Ð³Ð¾ Ð³Ñ€Ð°Ñ„Ð°\n";
 		res->print();
 		
-		cout<<"\nÑîäåðæèìîå âåðøèí è ðåáåð\n";
+		cout<<"\nÐ¡Ð¾Ð´ÐµÑ€Ð¶Ð¸Ð¼Ð¾Ðµ Ð²ÐµÑ€ÑˆÐ¸Ð½ Ð¸ Ñ€ÐµÐ±ÐµÑ€\n";
 		for(int k = 1; iV != res->endV(); ++iV, k++){
 			task1::reduce_vertex *v = *iV;
 			list<vertex*> *l = v->GetData();
@@ -551,28 +551,28 @@ void solveTask1(graph *g){
 		//iteratorEout(res);
 		cout<<"******************************************************\n\n";
 	}catch(NotDirectedGraphException){
-		cout<<"Ãðàô äîëæåí áûòü îðèåíòèðîâàííûì\n";
+		cout<<"Ð“Ñ€Ð°Ñ„ Ð´Ð¾Ð»Ð¶ÐµÐ½ Ð±Ñ‹Ñ‚ÑŒ Ð¾Ñ€Ð¸ÐµÐ½Ñ‚Ð¸Ñ€Ð¾Ð²Ð°Ð½Ð½Ñ‹Ð¼\n";
 	}
 }
 
 void solveTask2(graph *g){
 	if(!g){
-		cout<<"Ñîçäàéòå ãðàô\n";
+		cout<<"Ð¡Ð¾Ð·Ð´Ð°Ð¹Ñ‚Ðµ Ð³Ñ€Ð°Ñ„\n";
 		return;
 	}
 	int v1,v2;
-	cout<<"Ââåäèòå èìåíà âåðøèí\n";
-	cout<<"Âåðøèíà 1: "; cin>>v1;
-	cout<<"Âåðøèíà 2: "; cin>>v2;
-	cout<<"******************Ðåøåíèå çàäà÷è 2********************\n";
+	cout<<"Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ð¸Ð¼ÐµÐ½Ð° Ð²ÐµÑ€ÑˆÐ¸Ð½\n";
+	cout<<"Ð’ÐµÑ€ÑˆÐ¸Ð½Ð° 1: "; cin>>v1;
+	cout<<"Ð’ÐµÑ€ÑˆÐ¸Ð½Ð° 2: "; cin>>v2;
+	cout<<"******************Ð ÐµÑˆÐµÐ½Ð¸Ðµ Ð·Ð°Ð´Ð°Ñ‡Ð¸ 2********************\n";
 	try{
 		Task2<vertex,edge> t2(g,table[v1],table[v2]);
 		list<edge*> *edges = t2.Result();
-		cout<<"Îòâåò: ";
+		cout<<"ÐžÑ‚Ð²ÐµÑ‚: ";
 		for(list<edge*>::iterator it = edges->begin(); it != edges->end(); ++it)
 			cout<<'('<<(*it)->getV1()->GetName()<<' '<<(*it)->getV2()->GetName()<<") ";
 		cout<<endl;
-		cout<<"Êðàò÷àéøèå ïóòè ãðàôà ïðè óäàëåíèè ñîîòâåòñòâóþùèõ ðåáåð\n";
+		cout<<"ÐšÑ€Ð°Ñ‚Ñ‡Ð°Ð¹ÑˆÐ¸Ðµ Ð¿ÑƒÑ‚Ð¸ Ð³Ñ€Ð°Ñ„Ð° Ð¿Ñ€Ð¸ ÑƒÐ´Ð°Ð»ÐµÐ½Ð¸Ð¸ ÑÐ¾Ð¾Ñ‚Ð²ÐµÑ‚ÑÑ‚Ð²ÑƒÑŽÑ‰Ð¸Ñ… Ñ€ÐµÐ±ÐµÑ€\n";
 		cout<<t2.GetMaxShortestPathLength()<<endl;
 		map<edge*,list<vertex*>> vec = t2.GetMaxShortestPath();
 		map<edge*,list<vertex*>>::iterator i = vec.begin();
@@ -581,13 +581,13 @@ void solveTask2(graph *g){
 			cout<<'('<<e->getV1()->GetName()<<' '<<e->getV2()->GetName()<<"): ";
 			printPath(i->second);
 		}
-		cout<<"Èíôîðìàöèÿ îá èñõîäíîì ãðàôå\nÄëèíà êðàò÷àéøåãî ïóòè: "<<t2.GetShortestPathLength()<<endl;
-		cout<<"Êðàò÷àéøèé ïóòü: ";
+		cout<<"Ð˜Ð½Ñ„Ð¾Ñ€Ð¼Ð°Ñ†Ð¸Ñ Ð¾Ð± Ð¸ÑÑ…Ð¾Ð´Ð½Ð¾Ð¼ Ð³Ñ€Ð°Ñ„Ðµ\nÐ”Ð»Ð¸Ð½Ð° ÐºÑ€Ð°Ñ‚Ñ‡Ð°Ð¹ÑˆÐµÐ³Ð¾ Ð¿ÑƒÑ‚Ð¸: "<<t2.GetShortestPathLength()<<endl;
+		cout<<"ÐšÑ€Ð°Ñ‚Ñ‡Ð°Ð¹ÑˆÐ¸Ð¹ Ð¿ÑƒÑ‚ÑŒ: ";
 		list<vertex*> shortest_path = t2.GetShortestPath();
 		printPath(shortest_path);
 		cout<<"******************************************************\n\n";
 	}catch(VertexNotExistException){
-		cout<<"Âåðøèíû 1 èëè 2 íåò â ãðàôå\n";
+		cout<<"Ð’ÐµÑ€ÑˆÐ¸Ð½Ñ‹ 1 Ð¸Ð»Ð¸ 2 Ð½ÐµÑ‚ Ð² Ð³Ñ€Ð°Ñ„Ðµ\n";
 	}
 }
 
@@ -656,7 +656,7 @@ void main(){
 				solveTask2(g);
 				break;
 			case 19:
-				if(!g){cout<<"Ñîçäàéòå ãðàô\n"; break;}
+				if(!g){cout<<"Ð¡Ð¾Ð·Ð´Ð°Ð¹Ñ‚Ðµ Ð³Ñ€Ð°Ñ„\n"; break;}
 				g->print();
 				break;
 			default:
